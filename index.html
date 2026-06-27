@@ -1,297 +1,377 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>복음창고교회</title>
-
-  <!-- 한글 폰트: 첨부 이미지 느낌에 맞춘 명조 계열 -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
 </head>
-
 <body>
-  <header class="header">
-    <div class="brand">
-      <div class="logo-slot header-logo">
-        <img src="images/logo.jpeg"/>
-      </div>
-      <div>
-        <div class="brand-title">복음창고교회</div>
-        <div class="brand-sub">GOSPEL BOX CHURCH</div>
-      </div>
-    </div>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&amp;family=Cormorant+Garamond:wght@400;500;600;700&amp;family=Nanum+Pen+Script&amp;display=swap" rel="stylesheet">
+<style>
+  html{scroll-behavior:smooth;}
+  body{margin:0;}
+  a{color:inherit;text-decoration:none;}
+  @keyframes fcFloat{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+</style>
+</helmet>
 
-    <button class="hamburger" type="button" aria-label="메뉴 열기">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+<div style="font-family:'Gowun Batang',serif;color:#3c3a35;background:#f7f4ed;line-height:1.95;word-break:keep-all;letter-spacing:-0.01em;overflow-x:hidden;">
+
+  <header style="position: sticky; top: 0; z-index: 60; height: 60px; box-sizing: border-box; display: flex; align-items: center; justify-content: space-between; padding: 0 clamp(20px,5vw,52px); background: #ffffff; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid #e7e1d6; width: 100%">
+    <a href="#top" onClick="{{ closeNav }}" style="display:flex;align-items:center;gap:13px;">
+      <span style="width:40px;height:40px;border-radius:11px;background:#ffffff;border:1px solid #e7e1d6;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 4px 14px rgba(90,80,60,0.06);">
+        <img src="images/logo.jpeg" style="width:26px;height:26px;object-fit:contain;">
+      </span>
+      <span>
+        
+        <sc-if value="{{ showEnglish }}" hint-placeholder-val="{{ true }}"><span style="display:block;font-size:19px;font-weight:700;letter-spacing:0.1em;line-height:1.15;">복음창고교회</span><span style="display:block;font-family:'Cormorant Garamond',serif;font-size:11px;font-weight:600;letter-spacing:0.22em;line-height:1.2;margin-top:2px;color:#9b958a;">GOSPEL STORAGE CHURCH</span></sc-if>
+      </span>
+    </a><sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}"><nav style="display:flex;align-items:center;gap:clamp(14px,1.7vw,30px);">
+      <a href="#intro" onClick="{{ closeNav }}" style="font-size:15px;letter-spacing:0.02em;color:#3c3a35;white-space:nowrap;" style-hover="color:{{ accent }};">교회 소개</a>
+      <a href="#vision" onClick="{{ closeNav }}" style="font-size:15px;letter-spacing:0.02em;color:#3c3a35;white-space:nowrap;" style-hover="color:{{ accent }};">비전</a>
+      <a href="#community" onClick="{{ closeNav }}" style="font-size:15px;letter-spacing:0.02em;color:#3c3a35;white-space:nowrap;" style-hover="color:{{ accent }};">공동체</a>
+      <a href="#about" onClick="{{ closeNav }}" style="font-size:15px;letter-spacing:0.02em;color:#3c3a35;white-space:nowrap;" style-hover="color:{{ accent }};">교회의 의미</a>
+      <a href="#meaning" onClick="{{ closeNav }}" style="font-size:15px;letter-spacing:0.02em;color:#3c3a35;white-space:nowrap;" style-hover="color:{{ accent }};">로고의 의미</a>
+      <a href="#worship" onClick="{{ closeNav }}" style="font-size:15px;letter-spacing:0.02em;color:#3c3a35;white-space:nowrap;" style-hover="color:{{ accent }};">예배 안내</a>
+      <a href="#footer" onClick="{{ closeNav }}" style="font-size:15px;letter-spacing:0.02em;color:#3c3a35;white-space:nowrap;" style-hover="color:{{ accent }};">오시는 길</a>
+    </nav></sc-if><sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{ toggleNav }}" aria-label="메뉴" style="width: 26px; height: 18px; display: flex; flex-direction: column; justify-content: space-between; border: 0; background: transparent; cursor: pointer; padding: 0">
+      <span style="display:block;height:1.5px;background:{{ accent }};border-radius:2px;"></span>
+      <span style="display: block; height: 1.5px; background: {{ accent }}; border-radius: 2px"></span>
+      <span style="display:block;height:1.5px;background:{{ accent }};border-radius:2px;"></span>
+    </button></sc-if>
+    
   </header>
 
-  <div class="page">
-    <main class="main">
-      <div class="section-wrap hero-bg">
-        <section class="hero hero-section">
-        <div class="hero-image">
-          <img src="images/main_cover.png"/>
-        </div>
-        <div>
-          <span class="section-label">CHURCH INTRO</span>
-          <h1>Jesus All</h1>
-          <p class="sub">예수님이면 충분합니다.</p>
-          <p class="desc">
-            “오직 예수, 예수님이면 충분합니다”<br />
-            라는 고백 앞에 우리의 믿음을<br />
-            점검하며 나아가는 교회입니다.
-          </p>
-        </div>
-        </section>
+  <sc-if value="{{ navOpen }}" hint-placeholder-val="{{ false }}">
+    <nav style="position:sticky;top:82px;z-index:55;background:rgba(255,255,255,0.96);backdrop-filter:blur(14px);border-bottom:1px solid #e7e1d6;display:flex;flex-wrap:wrap;gap:6px 30px;padding:18px clamp(20px,5vw,52px);box-shadow:0 14px 30px rgba(90,80,60,0.06);">
+      <a href="#intro" onClick="{{ closeNav }}" style="font-size:16px;letter-spacing:0.04em;padding:6px 0;">교회 소개</a>
+      <a href="#vision" onClick="{{ closeNav }}" style="font-size:16px;letter-spacing:0.04em;padding:6px 0;">비전</a>
+      <a href="#community" onClick="{{ closeNav }}" style="font-size:16px;letter-spacing:0.04em;padding:6px 0;">공동체</a>
+      <a href="#about" onClick="{{ closeNav }}" style="font-size:16px;letter-spacing:0.04em;padding:6px 0;">교회의 의미</a>
+      <a href="#meaning" onClick="{{ closeNav }}" style="font-size:16px;letter-spacing:0.04em;padding:6px 0;">로고의 의미</a>
+      <a href="#worship" onClick="{{ closeNav }}" style="font-size:16px;letter-spacing:0.04em;padding:6px 0;">예배 안내</a>
+      <a href="#footer" onClick="{{ closeNav }}" style="font-size:16px;letter-spacing:0.04em;padding:6px 0;">오시는 길</a>
+    </nav>
+  </sc-if>
+
+  <span id="top"></span>
+
+  <!-- HERO -->
+  
+
+  <!-- VISION -->
+  
+
+  <!-- COMMUNITY -->
+  <section id="intro" style="background: linear-gradient(180deg,#ffffff 0%,#ffffff 100%); padding: 0 0 clamp(56px,9vw,100px)">
+    <div style="width:100%;margin-bottom:clamp(80px,11vw,150px);overflow:hidden;">
+      <div style="position:relative;overflow:hidden;animation:fcFloat 0.9s ease-out both;">
+        <img src="images/교회 메인 사진.png" style="width:100%;height:auto;display:block;">
       </div>
+    </div><div style="max-width: 780px; margin: 0 auto; text-align: center; padding: 0 clamp(22px,5vw,40px); position: relative">
+      <sc-if value="{{ showEnglish }}" hint-placeholder-val="{{ true }}"><span style="display: block; font-family: 'Cormorant Garamond',serif; font-size: 14px; font-weight: 600; letter-spacing: 0.34em; margin-bottom: 26px; color: {{ accent }}; position: relative"><br></span><span style="display: block; font-family: 'Cormorant Garamond',serif; font-size: 14px; font-weight: 600; letter-spacing: 0.3em; color: {{ accent }}; margin-bottom: 14px">CHURCH INTRO</span></sc-if>
+      
+      <h1 style="font-family:'Cormorant Garamond',serif;font-size:clamp(52px,9vw,80px);font-weight:500;line-height:1.04;margin:0 0 14px;letter-spacing:0.01em;">Jesus All</h1><p style="font-size: clamp(20px,3.4vw,25px); font-weight: 700; letter-spacing: 0.06em; color: {{ accent }}; margin: 0 0 30px">예수님이면 충분합니다.</p>
+      <p style="font-size:clamp(16px,2.4vw,19px);font-weight:400;line-height:2.15;letter-spacing:0.02em;color:#5b574e;max-width:540px;margin:0 auto;">예수님이 나를 사랑하시니 충분합니다.</p><div style="font-size: clamp(16px,2.4vw,19px); font-weight: 400; line-height: 2.15; letter-spacing: 0.02em; color: #5b574e; max-width: 540px; margin: 0 auto">예수님이 나를 아시니 충분합니다.</div><div style="font-size: clamp(16px,2.4vw,19px); font-weight: 400; line-height: 2.15; letter-spacing: 0.02em; color: #5b574e; max-width: 540px; margin: 0 auto">예수님이 나와 함께하시니 충분합니다.</div><div style="display: flex; justify-content: center; align-items: flex-start"><br><div style="width: 46px; height: 1.3px; background: {{ accent }}; margin-top: 24px; border-radius: 2px; display: block; align-items: top; justify-content: space-between"></div></div><p></p><div style="font-size: clamp(16px,2.4vw,19px); font-weight: 400; line-height: 2.15; letter-spacing: 0.02em; color: #5b574e; max-width: 540px; margin: 0 auto">복음창고교회는<div>이 복음을 붙들고 살아가는 교회입니다.</div></div><p></p>
+    </div>
+    
+  </section><section id="vision" style="background:#f4f0e7;border-top:1px solid #ece5d8;">
+    
+    <div style="position: relative; background: linear-gradient(rgba(34,48,28,0.28),rgba(34,48,28,0.32)),url('images/vison_bg.png') center/cover no-repeat; min-height: clamp(300px,44vw,460px); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: clamp(40px,7vw,80px) clamp(22px,5vw,40px)">
+      <sc-if value="{{ showEnglish }}" hint-placeholder-val="{{ true }}"></sc-if>
+      
+      
+    <h2 style="text-align:center;font-size:clamp(30px,5vw,46px);font-weight:700;letter-spacing:0.02em;line-height:1.35;margin:0;color:#ffffff;text-shadow:0 2px 16px rgba(20,30,15,0.5);">예배당을 넘어 삶의 자리로</h2></div><div style="max-width:980px;margin:0 auto;padding:clamp(54px,7vw,84px) clamp(22px,5vw,40px) clamp(64px,9vw,100px);">
+      <h3 style="font-size:clamp(26px,3.8vw,36px);font-weight:700;letter-spacing:0.01em;line-height:1.4;margin:0;color:#384a2e;">복음창고교회는 선교적 교회입니다</h3>
+      <div style="height:1px;background:#d8d0bf;margin:clamp(26px,3.5vw,36px) 0;"></div>
+      <p style="font-size:clamp(17px,2.2vw,20px);font-weight:400;line-height:2.2;letter-spacing:0.01em;color:#4a5340;margin:0;">예배당 안에 머무는 신앙이 아니라,<br>가정과 일터, 삶의 관계 속에서<br>복음을 살아내는 삶의 예배를 지향하며,<br>열방을 향한 하나님의 마음을 품고<br>선교에 동참하는 공동체입니다.</p>
+    </div>
+  </section><section id="community" style="background: #fbfaf8; border-top: 1px solid #ece5d8; padding: clamp(72px,10vw,120px) clamp(22px,5vw,40px)">
+    <div style="max-width: 760px; margin: 0 auto; text-align: center; color: #9a431d">
+      <sc-if value="{{ showEnglish }}" hint-placeholder-val="{{ true }}"><span style="display: block; font-family: 'Cormorant Garamond',serif; font-size: 14px; font-weight: 600; letter-spacing: 0.3em; color: {{ accent }}; margin-bottom: 14px">COMMUNITY</span></sc-if>
+      <h2 style="font-size:clamp(28px,4.6vw,36px);font-weight:700;letter-spacing:0.01em;line-height:1.5;margin:0 0 30px;">복음을 함께 살아가는 공동체</h2>
+      <p style="font-size:clamp(17px,2.5vw,19px);font-weight:400;line-height:2.25;letter-spacing:0.03em;color:#5b574e;margin:0 0 12px;">
+        <strong style="font-weight:700;color:#3c3a35;">우리는 날마다 복음이 필요한 사람들입니다.</strong><br>
+        예배와 기도로 나아가기를 힘쓰고,<br>
+        말씀을 삶으로 살아내기 위해 씨름하며,<br>
+        하나님께 받은 은혜를 세상에 흘려보내며 살아갑니다.
+      </p>
+      <div style="width:1px;height:54px;background:linear-gradient(180deg,{{ accent }},transparent);margin:34px auto 30px;"></div>
+      <p style="font-size:clamp(17px,2.5vw,19px);font-weight:400;letter-spacing:0.03em;color:#5b574e;margin:0;">완벽한 사람들이 아니라,</p>
+      <p style="font-size: clamp(26px,4.2vw,33px); font-weight: 700; line-height: 1.55; letter-spacing: 0.04em; color: #9a431d; margin: 10px 0">복음으로 살아가기를<br>소망하는 사람들이</p>
+      <p style="font-size:clamp(17px,2.5vw,19px);font-weight:400;letter-spacing:0.03em;color:#5b574e;margin:0;">함께 모여 있습니다.</p>
 
-           <div class="section-wrap community-bg">
-        <section class="section community">
-        <div class="community-inner">
-          <span class="section-label">COMMUNITY</span>
-          <h2>복음을 함께 살아가는 공동체</h2>
-          
-          <p class="main-copy">
-            <h3><strong>우리는 날마다 복음이 필요한 사람들입니다.</strong></h3>
-            예배와 기도로 나아가기를 힘쓰고,<br />
-            말씀을 삶으로 살아내기 위해 씨름하며,<br />
-            하나님께 받은 은혜를 세상에 흘려보내며 살아갑니다.
-          </p>
-
-          <div class="vertical-line"></div>
-
-          <p class="normal-copy">완벽한 사람들이 아니라,</p>
-          <p class="emphasis">
-            복음으로 살아가기를<br />
-            소망하는 사람들이
-          </p>
-          <p class="normal-copy">함께 모여 있습니다.</p>
-
-          <div class="group-area">
-            <div class="group-card group-engine">
-              <div class="icon-slot">
-                <!-- 엔진 아이콘 넣는 곳: engine.svg -->
-                icon
-              </div>
-              <strong>엔진</strong>
-              <span>청년부</span>
-            </div>
-
-            <div class="group-card group-fuse">
-              <div class="icon-slot">
-                <!-- 퓨즈 아이콘 넣는 곳: fuse.svg -->
-                icon
-              </div>
-              <strong>퓨즈</strong>
-              <span>유초등부</span>
-            </div>
-
-            <div class="group-logo">
-              <div class="logo-slot">
-                <!-- 작은 로고 이미지 넣는 곳: logo.svg -->
-                LOGO
-              </div>
-              <strong>복음창고교회</strong>
-              <p>GOSPEL STORAGE CHURCH</p>
-            </div>
-
-            <div class="group-card group-oil">
-              <div class="icon-slot">
-                <!-- 오일 아이콘 넣는 곳: oil.svg -->
-                icon
-              </div>
-              <strong>오일</strong>
-              <span>유아부</span>
-            </div>
-
-            <div class="group-card group-memory">
-              <div class="icon-slot">
-                <!-- 기억 아이콘 넣는 곳: memory.svg -->
-                icon
-              </div>
-              <strong>기억</strong>
-              <span>중년부</span>
-            </div>
-          </div>
-
-          <a href="#" class="more-btn">공동체 전체보기 <span>→</span></a>
+      <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}"><div style="position:relative;width:100%;max-width:min(600px,86vw);aspect-ratio:1.18;margin:56px auto 36px;">
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:clamp(108px,29vw,154px);height:clamp(108px,29vw,154px);border-radius:50%;background:#ffffff;border:1px solid #ece5d8;box-shadow:0 16px 36px rgba(110,98,74,0.10);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:2;">
+          <img src="images/logo.jpeg" style="width:48px;height:48px;object-fit:contain;margin-bottom:8px;">
+          <strong style="font-size:14px;font-weight:700;letter-spacing:0.04em;">복음창고교회</strong>
+          <sc-if value="{{ showEnglish }}" hint-placeholder-val="{{ true }}"><span style="font-family:'Cormorant Garamond',serif;font-size:9px;font-weight:600;letter-spacing:0.14em;color:#9b958a;">GOSPEL STORAGE</span></sc-if>
         </div>
-        </section>
-      </div>
+        <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:clamp(88px,24vw,130px);height:clamp(88px,24vw,130px);border-radius:50%;background:#e2edf2;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+          <strong style="font-size:20px;font-weight:700;color:#4a7d93;">엔진</strong>
+          <span style="font-size:13px;color:#6f8b97;letter-spacing:0.04em;">청년부</span>
+        </div>
+        <div style="position:absolute;top:50%;left:0;transform:translateY(-50%);width:clamp(88px,24vw,130px);height:clamp(88px,24vw,130px);border-radius:50%;background:#e2f0e8;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+          <strong style="font-size:20px;font-weight:700;color:#4f8a6c;">퓨즈</strong>
+          <span style="font-size:13px;color:#73967f;letter-spacing:0.04em;">유초등부</span>
+        </div>
+        <div style="position:absolute;top:50%;right:0;transform:translateY(-50%);width:clamp(88px,24vw,130px);height:clamp(88px,24vw,130px);border-radius:50%;background:#f6e7d7;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+          <strong style="font-size:20px;font-weight:700;color:#b07845;">오일</strong>
+          <span style="font-size:13px;color:#a98a6c;letter-spacing:0.04em;">유아부</span>
+        </div>
+        <div style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:clamp(88px,24vw,130px);height:clamp(88px,24vw,130px);border-radius:50%;background:#f2ecd7;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+          <strong style="font-size:20px;font-weight:700;color:#9a8336;">기억</strong>
+          <span style="font-size:13px;color:#a39472;letter-spacing:0.04em;">중년부</span>
+        </div>
+      </div></sc-if>
 
-      <div class="section-wrap about-bg">
-        <section class="section about">
-          <div>
-            <span class="section-label">ABOUT US</span>
-            <h2>복음창고교회의<br />의미</h2>
-            <div class="short-line"></div>
+      <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+        <div style="margin:40px auto 32px;display:flex;flex-direction:column;align-items:center;gap:26px;">
+          <div style="width:140px;height:140px;border-radius:50%;background:#ffffff;border:1px solid #ece5d8;box-shadow:0 16px 36px rgba(110,98,74,0.10);display:flex;flex-direction:column;align-items:center;justify-content:center;">
+            <img src="images/logo.jpeg" style="width:46px;height:46px;object-fit:contain;margin-bottom:8px;">
+            <strong style="font-size:14px;font-weight:700;letter-spacing:0.04em;">복음창고교회</strong>
+            <sc-if value="{{ showEnglish }}" hint-placeholder-val="{{ true }}"><span style="font-family:'Cormorant Garamond',serif;font-size:9px;font-weight:600;letter-spacing:0.14em;color:#9b958a;">GOSPEL STORAGE</span></sc-if>
           </div>
-
-          <div class="about-text">
-            <p>창고는 쌓아두는 공간입니다.</p>
-            <br />
-            <p>
-              복음창고교회는<br />
-              하나님이 복음을 저장하는 곳이 아니라,
-            </p>
-            <br />
-            <p>
-              <strong>복음을 채우고,</strong><br />
-              <strong>복음을 살아내고,</strong><br />
-              <strong>복음을 흘려보내는 공동체</strong>가 되기를<br />
-              소망합니다.
-            </p>
-          </div>
-        </section>
-      </div>
-
-      <div class="section-wrap logo-bg">
-        <section class="section logo-meaning">
-        <h2>로고의 의미</h2>
-        <div class="short-line" style="margin: 0 auto;"></div>
-
-        <div class="meaning-wrap">
-          <div class="meaning-card cross">
-            <div class="icon-slot">
-              <!-- 십자가 아이콘 넣는 곳: cross.svg -->
-              icon
+          <div style="width:100%;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <div style="aspect-ratio:1;border-radius:50%;background:#e2edf2;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+              <strong style="font-size:19px;font-weight:700;color:#4a7d93;">엔진</strong>
+              <span style="font-size:12px;color:#6f8b97;letter-spacing:0.04em;">청년부</span>
             </div>
-            <div>
-              <strong>십자가</strong>
-              <p>복음의 중심<br />예수 그리스도</p>
+            <div style="aspect-ratio:1;border-radius:50%;background:#e2f0e8;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+              <strong style="font-size:19px;font-weight:700;color:#4f8a6c;">퓨즈</strong>
+              <span style="font-size:12px;color:#73967f;letter-spacing:0.04em;">유초등부</span>
             </div>
-          </div>
-
-          <div class="meaning-card cycle">
-            <div class="icon-slot">
-              <!-- 원/순환 아이콘 넣는 곳: cycle.svg -->
-              icon
+            <div style="aspect-ratio:1;border-radius:50%;background:#f6e7d7;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+              <strong style="font-size:19px;font-weight:700;color:#b07845;">오일</strong>
+              <span style="font-size:12px;color:#a98a6c;letter-spacing:0.04em;">유아부</span>
             </div>
-            <div>
-              <strong>원(순환)</strong>
-              <p>복음의 확장<br />세상으로 보냄심</p>
-            </div>
-          </div>
-
-          <div class="center-logo">
-            <div class="logo-slot">
-              <!-- 중앙 로고 이미지 넣는 곳: logo.svg -->
-              LOGO
-            </div>
-            <h3>복음창고교회</h3>
-            <p>GOSPEL STORAGE CHURCH</p>
-          </div>
-
-          <div class="meaning-card warehouse">
-            <div class="icon-slot">
-              <!-- 창고 아이콘 넣는 곳: warehouse.svg -->
-              icon
-            </div>
-            <div>
-              <strong>창고</strong>
-              <p>복음을 품고<br />세상에 흘려보내는 공간</p>
-            </div>
-          </div>
-
-          <div class="meaning-card people">
-            <div class="icon-slot">
-              <!-- 사람 아이콘 넣는 곳: people.svg -->
-              icon
-            </div>
-            <div>
-              <strong>사람</strong>
-              <p>복음을 살아내는<br />공동체</p>
+            <div style="aspect-ratio:1;border-radius:50%;background:#f2ecd7;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+              <strong style="font-size:19px;font-weight:700;color:#9a8336;">기억</strong>
+              <span style="font-size:12px;color:#a39472;letter-spacing:0.04em;">중년부</span>
             </div>
           </div>
         </div>
-        </section>
-      </div>
+      </sc-if>
 
-      <div class="section-wrap worship-bg">
-        <section class="section worship">
-        <span class="section-label">WORSHIP</span>
-        <h2>예배안내</h2>
+      <a href="#" style="display:inline-flex;align-items:center;justify-content:center;gap:14px;width:min(100%,440px);height:52px;border:1px solid #e2dccf;border-radius:30px;background:#ffffff;font-size:16px;font-weight:700;letter-spacing:0.03em;color:#3c3a35;box-shadow:0 8px 22px rgba(110,98,74,0.05);" style-hover="background:#fbfaf6;border-color:{{ accent }};">공동체 전체보기 <span style="color:{{ accent }};">→</span></a>
+    </div>
+  </section>
 
-        <div class="tab-wrapper">
-          <div class="tab">주 일</div>
+  <!-- ABOUT -->
+  
+
+  <!-- LOGO MEANING -->
+  <section id="meaning" style="background: #ffffff; border-top: 1px solid #ece5d8; padding: clamp(72px,10vw,120px) clamp(22px,5vw,40px)">
+    <div style="max-width:1040px;margin:0 auto;text-align:center;">
+      <h2 style="font-size:clamp(26px,4.2vw,32px);font-weight:700;margin:0 0 10px;letter-spacing:0.01em;">로고의 의미</h2>
+      <div style="width:46px;height:2px;background:{{ accent }};margin:0 auto;border-radius:2px;"></div>
+
+      <div style="{{ meaningGrid }}">
+        <div style="grid-area:cross;display:flex;align-items:center;gap:18px;text-align:left;background:#ffffff;border:1px solid #ece5d8;border-radius:18px;padding:24px;box-shadow:0 14px 34px rgba(110,98,74,0.05);">
+          <span style="flex:0 0 58px;width:58px;height:58px;border-radius:50%;background:#e2edf2;display:flex;align-items:center;justify-content:center;">
+            <svg width="26" height="26" viewBox="0 0 26 26"><rect x="11" y="3" width="4" height="20" rx="1.6" fill="#6c9fb6"></rect><rect x="4" y="9" width="18" height="4" rx="1.6" fill="#6c9fb6"></rect></svg>
+          </span>
+          <span><strong style="display:block;font-size:17px;font-weight:700;line-height:1.4;">십자가</strong><span style="font-size:13px;color:#7a756a;line-height:1.65;">복음의 중심<br>예수 그리스도</span></span>
         </div>
-
-        <div class="worship-box">
-          <div class="worship-row">
-            <span>주일예배</span>
-            <span>오전 10:50</span>
-          </div>
-          <div class="worship-row">
-            <span>유아, 유치부</span>
-            <span>오전 10:50</span>
-          </div>
-          <div class="worship-row">
-            <span>아동부</span>
-            <span>오전 10:50</span>
-          </div>
-          <div class="worship-row">
-            <span>청소년부</span>
-            <span>오후 2:00</span>
-          </div>
+        <div style="grid-area:cycle;display:flex;align-items:center;gap:18px;text-align:left;background:#ffffff;border:1px solid #ece5d8;border-radius:18px;padding:24px;box-shadow:0 14px 34px rgba(110,98,74,0.05);">
+          <span style="flex:0 0 58px;width:58px;height:58px;border-radius:50%;background:#e2f0e8;display:flex;align-items:center;justify-content:center;">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="9" stroke="#5d9a7a" stroke-width="2.2"></circle><path d="M14 5 L14 2 M14 5 L11 7.5" stroke="#5d9a7a" stroke-width="2.2" stroke-linecap="round"></path></svg>
+          </span>
+          <span><strong style="display:block;font-size:17px;font-weight:700;line-height:1.4;">원 (순환)</strong><span style="font-size:13px;color:#7a756a;line-height:1.65;">복음의 확장<br>세상으로 보내심</span></span>
         </div>
-
-        <div class="worship-box">
-          <div class="worship-row">
-            <span>수요예배</span>
-            <span>오후 7:30</span>
-          </div>
-          <div class="worship-row">
-            <span>새벽예배(월-금)</span>
-            <span>오전 5:30</span>
-          </div>
+        <div style="grid-area:logo;text-align:center;">
+          <span style="display:flex;align-items:center;justify-content:center;width:132px;height:132px;margin:0 auto 12px;border-radius:50%;background:#ffffff;border:1px solid #ece5d8;box-shadow:0 16px 36px rgba(110,98,74,0.10);">
+            <img src="images/logo.jpeg" style="width:60px;height:60px;object-fit:contain;">
+          </span>
+          <h3 style="font-size:18px;font-weight:700;letter-spacing:0.03em;margin:0;">복음창고교회</h3>
+          <sc-if value="{{ showEnglish }}" hint-placeholder-val="{{ true }}"><p style="font-family:'Cormorant Garamond',serif;font-size:11px;font-weight:600;letter-spacing:0.16em;color:#9b958a;margin:3px 0 0;">GOSPEL STORAGE CHURCH</p></sc-if>
         </div>
-        </section>
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-top">
-        <div class="logo-slot">
-          <!-- 푸터 로고 이미지 넣는 곳: logo.svg -->
-          LOGO
+        <div style="grid-area:warehouse;display:flex;align-items:center;gap:18px;text-align:left;background:#ffffff;border:1px solid #ece5d8;border-radius:18px;padding:24px;box-shadow:0 14px 34px rgba(110,98,74,0.05);">
+          <span style="flex:0 0 58px;width:58px;height:58px;border-radius:50%;background:#f6e7d7;display:flex;align-items:center;justify-content:center;">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#b07845" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M5 12 L14 5 L23 12"></path><path d="M7 12 L7 22 L21 22 L21 12"></path><path d="M12 22 L12 16 L16 16 L16 22"></path></svg>
+          </span>
+          <span><strong style="display:block;font-size:17px;font-weight:700;line-height:1.4;">창고</strong><span style="font-size:13px;color:#7a756a;line-height:1.65;">복음을 품고<br>세상에 흘려보내는 공간</span></span>
         </div>
-        <div>
-          <h2>복음창고교회</h2>
-          <p>하나님의 세상으로 이웃과 함께하는 공동체</p>
+        <div style="grid-area:people;display:flex;align-items:center;gap:18px;text-align:left;background:#ffffff;border:1px solid #ece5d8;border-radius:18px;padding:24px;box-shadow:0 14px 34px rgba(110,98,74,0.05);">
+          <span style="flex:0 0 58px;width:58px;height:58px;border-radius:50%;background:#f2ecd7;display:flex;align-items:center;justify-content:center;">
+            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="#9a8336" stroke-width="2" stroke-linecap="round"><circle cx="13" cy="9" r="4.2"></circle><path d="M5 22 C5 16.5 9 14.5 13 14.5 C17 14.5 21 16.5 21 22"></path></svg>
+          </span>
+          <span><strong style="display:block;font-size:17px;font-weight:700;line-height:1.4;">사람</strong><span style="font-size:13px;color:#7a756a;line-height:1.65;">복음을 살아내는<br>공동체</span></span>
         </div>
       </div>
+    </div>
+  </section>
 
-      <nav class="footer-nav">
-        <a href="#">복사선교회</a>
-        <a href="#">크리스천</a>
-        <a href="#">공동목회자</a>
-        <a href="#">예레미야</a>
-        <a href="#">오시는길</a>
+  <!-- ONE LINE -->
+  <section id="oneline" style="border-top: 1px solid #ddd5c4; background:#e8e1d2; overflow: hidden">
+    <div style="width:80%;max-width:920px;margin:0 auto;background:url('images/oneline_x_top.png') top center/100% auto no-repeat,url('images/oneline_x_bottom.png') bottom center/100% auto no-repeat,#5b5040;overflow:hidden;container-type:inline-size;">
+    <div style="height: 45cqw; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 clamp(18px,4vw,40px)">
+      <h2 style="font-size:clamp(28px,4.6vw,40px);font-weight:700;letter-spacing:0.02em;margin:0;color:#4a4234;">성도의 한줄</h2>
+      <div style="width:1px;height:20px;background:#bcae93;margin:9px auto;"></div>
+      <p style="font-size:clamp(15px,2.3vw,17px);font-weight:400;color:#7a7261;letter-spacing:0.04em;margin:0;">복음을 함께 살아가는 이야기</p>
+    </div>
+
+    <div style="max-width:760px;margin:0 auto;padding:clamp(20px,3vw,40px) clamp(8px,2vw,24px) 0;">
+      <div style="{{ viewportStyle }}" onPointerDown="{{ onDown }}" onPointerMove="{{ onMove }}" onPointerUp="{{ onUp }}" onPointerLeave="{{ onUp }}">
+        <div style="{{ trackStyle }}">
+          <sc-for list="{{ slides }}" as="slide" hint-placeholder-count="3">
+            <div style="flex:0 0 100%;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:clamp(8px,2vw,20px) clamp(20px,5vw,52px);">
+              <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(44px,7vw,62px);line-height:0.4;color:#cbb89a;opacity:0.75;user-select:none;">“</span>
+              <p style="font-size:clamp(23px,3.6vw,32px);font-weight:700;line-height:1.55;letter-spacing:0.01em;color:#f1e9d9;margin:clamp(12px,2.4vw,28px) 0 0;white-space:pre-line;">{{ slide.heading }}</p>
+              <div style="width:48px;height:1px;background:rgba(255,255,255,0.32);margin:clamp(13px,2.2vw,30px) 0;"></div>
+              <p style="font-size:clamp(15px,2.2vw,17px);font-weight:400;line-height:1.75;letter-spacing:0.01em;color:rgba(244,238,225,0.82);margin:0;white-space:pre-line;">{{ slide.body }}</p>
+              <p style="font-size:clamp(14px,2vw,15px);font-weight:400;letter-spacing:0.04em;color:rgba(244,238,225,0.55);margin:clamp(16px,3vw,38px) 0 0;">{{ slide.attr }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:center;gap:13px;margin-top:clamp(30px,4vw,42px);">
+        <sc-for list="{{ dots }}" as="dot" hint-placeholder-count="3">
+          <button type="button" aria-label="이야기 보기" onClick="{{ dot.go }}" style="{{ dot.style }}"></button>
+        </sc-for>
+      </div>
+    </div>
+    <div style="height:33cqw;"></div>
+    </div>
+  </section>
+
+  <!-- WORSHIP -->
+  <section id="worship" style="background: linear-gradient(180deg,#ffffff 0%,#ffffff 100%); border-top: 1px solid #ece5d8; padding: clamp(72px,10vw,120px) clamp(22px,5vw,40px)">
+    <div style="max-width:620px;margin:0 auto;">
+      <sc-if value="{{ showEnglish }}" hint-placeholder-val="{{ true }}"><span style="display:block;font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:600;letter-spacing:0.3em;color:{{ accent }};margin-bottom:14px;">WORSHIP</span></sc-if>
+      <h2 style="font-size:clamp(28px,4.4vw,36px);font-weight:700;letter-spacing:-0.01em;margin:0 0 26px;">예배 안내</h2>
+      <span style="display:inline-flex;align-items:center;justify-content:center;min-width:120px;height:42px;padding:0 28px;margin-bottom:18px;border-radius:24px;background:{{ accent }};color:#fff;font-size:16px;font-weight:700;letter-spacing:0.08em;">주 일</span>
+      <div style="background:#ffffff;border:1px solid #ece5d8;border-radius:18px;overflow:hidden;margin-bottom:20px;box-shadow:0 14px 34px rgba(110,98,74,0.05);">
+        <div style="display:flex;justify-content:space-between;gap:24px;padding:18px 28px;border-bottom:1px solid #f0ebe1;font-size:17px;font-weight:700;letter-spacing:0.04em;"><span>주일예배</span><span style="color:#5b574e;">오전 10:50</span></div>
+        <div style="display:flex;justify-content:space-between;gap:24px;padding:18px 28px;border-bottom:1px solid #f0ebe1;font-size:17px;font-weight:700;letter-spacing:0.04em;"><span>유아 · 유치부</span><span style="color:#5b574e;">오전 10:50</span></div>
+        <div style="display:flex;justify-content:space-between;gap:24px;padding:18px 28px;border-bottom:1px solid #f0ebe1;font-size:17px;font-weight:700;letter-spacing:0.04em;"><span>아동부</span><span style="color:#5b574e;">오전 10:50</span></div>
+        <div style="display:flex;justify-content:space-between;gap:24px;padding:18px 28px;font-size:17px;font-weight:700;letter-spacing:0.04em;"><span>청소년부</span><span style="color:#5b574e;">오후 2:00</span></div>
+      </div>
+      <span style="display:inline-flex;align-items:center;justify-content:center;min-width:120px;height:42px;padding:0 28px;margin-bottom:18px;border-radius:24px;background:#ffffff;border:1px solid #e2dccf;color:#5b574e;font-size:16px;font-weight:700;letter-spacing:0.08em;">주 중</span>
+      <div style="background:#ffffff;border:1px solid #ece5d8;border-radius:18px;overflow:hidden;box-shadow:0 14px 34px rgba(110,98,74,0.05);">
+        <div style="display:flex;justify-content:space-between;gap:24px;padding:18px 28px;border-bottom:1px solid #f0ebe1;font-size:17px;font-weight:700;letter-spacing:0.04em;"><span>수요예배</span><span style="color:#5b574e;">오후 7:30</span></div>
+        <div style="display:flex;justify-content:space-between;gap:24px;padding:18px 28px;font-size:17px;font-weight:700;letter-spacing:0.04em;"><span>새벽예배 (월–금)</span><span style="color:#5b574e;">오전 5:30</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer" style="background:{{ footerBg }};color:{{ footerText }};padding:clamp(52px,7vw,72px) clamp(22px,5vw,52px) 48px;">
+    <div style="max-width:980px;margin:0 auto;">
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
+        <span style="width:54px;height:54px;border-radius:14px;background:rgba(255,255,255,0.92);display:flex;align-items:center;justify-content:center;overflow:hidden;">
+          <img src="images/logo.jpeg" style="width:34px;height:34px;object-fit:contain;">
+        </span>
+        <span>
+          <h2 style="font-size:22px;font-weight:700;letter-spacing:0.06em;line-height:1.3;margin:0;">복음창고교회</h2>
+          <p style="font-size:14px;color:{{ footerSub }};margin:4px 0 0;letter-spacing:0.02em;">하나님의 사랑으로 이웃과 함께하는 공동체</p>
+        </span>
+      </div>
+      <nav style="display:flex;flex-wrap:wrap;gap:14px 24px;padding:22px 0;margin:0;border-top:1px solid {{ footerLine }};border-bottom:1px solid {{ footerLine }};">
+        <a href="#intro" style="font-size:15px;color:{{ footerText }};">교회 소개</a>
+        <a href="#community" style="font-size:15px;color:{{ footerText }};">공동체</a>
+        <a href="#meaning" style="font-size:15px;color:{{ footerText }};">로고의 의미</a>
+        <a href="#worship" style="font-size:15px;color:{{ footerText }};">예배 안내</a>
+        <a href="#footer" style="font-size:15px;color:{{ footerText }};">오시는 길</a>
       </nav>
-
-      <ul class="footer-info">
-        <li>서울특별시 행복구 사랑로 123, 복음창고교회</li>
-        <li>02-1234-5678</li>
-        <li>2호선 사랑역 3번 출구 도보 5분</li>
-        <li>버스 123, 456, 789</li>
-        <li>교회 건물 내 주차장 이용 가능 (무료)</li>
+      <ul style="list-style:none;padding:0;margin:24px 0 0;display:grid;gap:7px;">
+        <li style="font-size:15px;color:{{ footerSub }};line-height:1.8;">서울특별시 행복구 사랑로 123, 복음창고교회</li>
+        <li style="font-size:15px;color:{{ footerSub }};line-height:1.8;">02-1234-5678</li>
+        <li style="font-size:15px;color:{{ footerSub }};line-height:1.8;">2호선 사랑역 3번 출구 도보 5분 · 버스 123, 456, 789</li>
+        <li style="font-size:15px;color:{{ footerSub }};line-height:1.8;">교회 건물 내 주차장 이용 가능 (무료)</li>
       </ul>
+      <p style="margin:32px 0 0;font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:0.04em;color:{{ footerSub }};">© 2024 복음창고교회. All rights reserved.</p>
+    </div>
+  </footer>
 
-      <div class="sns">
-        <span>▶</span>
-        <span>◎</span>
-        <span>f</span>
-      </div>
-
-      <p class="copy">© 2024 복음창고교회. All rights reserved.</p>
-    </footer>
-
-  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#9a431d&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#9a431d&quot;,&quot;#8fb9cc&quot;,&quot;#9ccab2&quot;,&quot;#e3ab82&quot;,&quot;#cda6c4&quot;],&quot;section&quot;:&quot;테마&quot;},&quot;showEnglish&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;테마&quot;},&quot;footerTone&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;dark&quot;,&quot;options&quot;:[&quot;dark&quot;,&quot;light&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;테마&quot;}}">
+class Component extends DCLogic {
+  SLIDES = [
+    {
+      heading: '우리 교회는\n평양냉면 같은 교회입니다.',
+      body: '처음에는 밍밍하고 싱겁게 느껴질 수 있습니다.\n행사도 많지 않고, 사람의 감정을 자극하는\n프로그램도 많지 않습니다.\n\n하지만 복음은 원래 그렇지 않을까요?\n\n복음은 특별한 이벤트보다 평범한 일상 속에서\n말씀과 기도, 그리고 예배를 통해\n우리를 조금씩 변화시켜 갑니다.\n\n평양냉면의 맛을 알아갈수록 그 깊이를 느끼게 되듯,\n복음도 그 안에 머물수록 진정한 맛을\n알게 되는 것 같습니다.',
+      attr: '- 복음창고교회 성도',
+    },
+    {
+      heading: '말씀 한 절이\n저를 다시 일으켰습니다.',
+      body: '지치고 흔들리던 시간 속에서\n매주 듣는 말씀 한 절이\n무너진 저를 다시 세워 주었습니다.\n\n복음은 거창한 결심이 아니라\n날마다의 작은 순종임을\n조금씩 배워 갑니다.',
+      attr: '- 복음창고교회 청년부',
+    },
+    {
+      heading: '함께 기도하는\n공동체가 되었습니다.',
+      body: '혼자였다면 포기했을 길을\n곁에서 함께 기도해 준 지체들 덕분에\n끝까지 걸어올 수 있었습니다.\n\n서로의 짐을 나누어 지는 것,\n그것이 교회였습니다.',
+      attr: '- 복음창고교회 성도',
+    },
+    {
+      heading: '일상이\n예배가 되어갑니다.',
+      body: '예배당을 넘어\n가정과 일터의 자리에서\n복음을 살아내려 애씁니다.\n\n작은 자리에서의 신실함이\n가장 큰 예배임을\n날마다 고백하게 됩니다.',
+      attr: '- 복음창고교회 성도',
+    },
+  ];
+  state = { navOpen: false, narrow: typeof window !== 'undefined' && window.innerWidth < 720, slideIdx: 0, dragX: 0, dragging: false };
+  onDown = (e) => { this._startX = e.clientX; this._active = true; this.setState({ dragging: true }); try { e.currentTarget.setPointerCapture(e.pointerId); } catch (_) {} };
+  onMove = (e) => { if (!this._active) return; this.setState({ dragX: e.clientX - this._startX }); };
+  onUp = () => {
+    if (!this._active) return;
+    this._active = false;
+    const dx = this.state.dragX;
+    let idx = this.state.slideIdx;
+    if (dx < -45) idx = Math.min(idx + 1, this.SLIDES.length - 1);
+    else if (dx > 45) idx = Math.max(idx - 1, 0);
+    this.setState({ slideIdx: idx, dragX: 0, dragging: false });
+  };
+  componentDidMount() {
+    this._onResize = () => {
+      const narrow = window.innerWidth < 720;
+      if (narrow !== this.state.narrow) this.setState({ narrow });
+    };
+    window.addEventListener('resize', this._onResize);
+  }
+  componentWillUnmount() {
+    if (this._onResize) window.removeEventListener('resize', this._onResize);
+  }
+  renderVals() {
+    const accent = this.props.accent ?? '#9a431d';
+    const dark = (this.props.footerTone ?? 'dark') === 'dark';
+    const meaningGrid = this.state.narrow
+      ? "margin-top:42px;display:grid;grid-template-columns:1fr;grid-template-areas:'logo' 'cross' 'cycle' 'warehouse' 'people';gap:16px;align-items:stretch;"
+      : "margin-top:50px;display:grid;grid-template-columns:1fr minmax(180px,200px) 1fr;grid-template-areas:'cross logo cycle' 'warehouse logo people';gap:26px;align-items:center;";
+    const idx = this.state.slideIdx;
+    const dragging = this.state.dragging;
+    const trackStyle = 'display:flex;align-items:stretch;will-change:transform;transition:' +
+      (dragging ? 'none' : 'transform .45s cubic-bezier(.4,0,.2,1)') +
+      ';transform:translateX(calc(' + (-idx * 100) + '% + ' + this.state.dragX + 'px));';
+    const dots = this.SLIDES.map((_, i) => ({
+      go: () => this.setState({ slideIdx: i, dragX: 0, dragging: false }),
+      style: 'width:9px;height:9px;border-radius:50%;padding:0;cursor:pointer;transition:background .25s,border-color .25s;' +
+        (i === idx ? 'background:#e8ddc8;border:1px solid #e8ddc8;' : 'background:transparent;border:1px solid rgba(232,221,200,0.5);'),
+    }));
+    return {
+      accent,
+      meaningGrid,
+      narrow: this.state.narrow,
+      wide: !this.state.narrow,
+      slides: this.state.narrow ? this.SLIDES.map(s => ({ ...s, body: s.body.replace(/\n\n/g, '\n') })) : this.SLIDES,
+      dots,
+      trackStyle,
+      viewportStyle: 'overflow:hidden;width:100%;touch-action:pan-y;cursor:grab;',
+      showEnglish: this.props.showEnglish ?? true,
+      navOpen: this.state.navOpen,
+      toggleNav: () => this.setState(s => ({ navOpen: !s.navOpen })),
+      closeNav: () => this.setState({ navOpen: false }),
+      footerBg: dark ? '#403d37' : '#efe9dd',
+      footerText: dark ? 'rgba(255,255,255,0.92)' : '#403d37',
+      footerSub: dark ? 'rgba(255,255,255,0.60)' : '#7a756a',
+      footerLine: dark ? 'rgba(255,255,255,0.16)' : '#ddd5c6',
+    };
+  }
+}
+</script>
 </body>
 </html>
